@@ -9,7 +9,7 @@ const server = http.createServer((req, res) => {
   res.end('<html>
           <body>
     <div>
-        <h1 title="working title: Yoke of Fate">Matt's Website</h1>
+        <title>Matt Allwood's Website</title>
     </div>
           </body>
           </html>');
