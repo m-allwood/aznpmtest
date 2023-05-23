@@ -8,9 +8,7 @@ const server = http.createServer((req, res) => {
   res.setHeader('Content-Type', 'text/html');
   res.end('<html>
           <body>
-    <div>
         <title>Matt Allwood's Website</title>
-    </div>
           </body>
           </html>');
 });
