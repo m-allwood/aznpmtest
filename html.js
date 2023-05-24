@@ -23,7 +23,3 @@ fs.readFile(__dirname + "/index.html")
         res.error('Could not read index.html file: ${err}');
         process.exit(1);
     })
-
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
