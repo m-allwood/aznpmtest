@@ -16,10 +16,10 @@ fs.readFile(__dirname + "/index.html")
     .then(contents => {
         indexFile = contents;
         server.listen(port, hostname, () => {
-            console.log('Server running at http://${hostname}:${port}/');
+            console.log(`Server running at http://${hostname}:${port}/`);
         })
     })
     .catch(err => {
-        res.error('Could not read index.html file: ${err}');
+        res.error(`Could not read index.html file: ${err}`);
         process.exit(1);
     })
