@@ -11,6 +11,11 @@ const server = http.createServer((req, res) => {
         res.writeHead(200);
         res.end(contents);
     })
+    .catch(err => {
+        res.writeHead(500);
+        res.end(err);
+        return;
+    })
 });
 
 server.listen(port, hostname, () => {
