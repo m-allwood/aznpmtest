@@ -5,7 +5,7 @@ const hostname = '0.0.0.0';
 const port = 80;
 
 const server = http.createServer((req, res) => {
-  fs.readFile(_dirname + "/index.html")
+  fs.readFile(__dirname + "/index.html")
     .then(contents => {
         res.setHeader('Content-Type', 'text/html');
         res.writeHead(200);
