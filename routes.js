@@ -21,6 +21,6 @@ const requestListener = function (req, res) {
             break
         default:
             res.writeHead(404);
-            res.end(JSON.stringify({error:"Resource not found"}))
+            res.end(JSON.stringify({error:"Resource not found"}));
     }
 }
