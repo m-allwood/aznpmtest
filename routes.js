@@ -13,7 +13,7 @@ const authors = JSON.stringify([
     { name: "Kahlil Gibran", countryOfBirth: "Lebanon", yearOfBirth: 1883 }
 ]);
 
-const server = http.createServer((req, res) {
+const server = http.createServer((req, res) => {
     res.setHeader("Content-Type", "application/json");
     switch (req.url) {
         case "/books":
