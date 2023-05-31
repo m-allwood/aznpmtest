@@ -1,3 +1,8 @@
+const http = require('http');
+
+const hostname = '0.0.0.0';
+const port = 80;
+
 const books = JSON.stringify([
     { title: "The Alchemist", author: "Paulo Coelho", year: 1988 },
     { title: "The Prophet", author: "Kahlil Gibran", year: 1923 }
@@ -8,7 +13,7 @@ const authors = JSON.stringify([
     { name: "Kahlil Gibran", countryOfBirth: "Lebanon", yearOfBirth: 1883 }
 ]);
 
-const requestListener = function (req, res) {
+const server = http.createServer((req, res) {
     res.setHeader("Content-Type", "application/json");
     switch (req.url) {
         case "/books":
@@ -24,3 +29,8 @@ const requestListener = function (req, res) {
             res.end(JSON.stringify({error:"Resource not found"}));
     }
 }
+)
+
+server.listen(port, hostname, () => {
+    console.log(`Server running at http://${hostname}:${port}/`);
+  });
