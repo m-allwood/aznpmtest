@@ -1,11 +1,11 @@
 var Connection = require('tedious').Connection;  
     var config = {  
-        server: 'mysqlserver0297.database.windows.net',  //update me
+        server: 'servername',  //update me
         authentication: {
             type: 'default',
             options: {
                 userName: '55555', //update me
-                password: 'your_password'  //update me
+                password: '66666'  //update me
             }
         },
         options: {
@@ -19,6 +19,8 @@ var Connection = require('tedious').Connection;
         // If no error, then good to proceed.
         console.log("Connected");  
     });
+
+    connection.connect();
 
     var Request = require('tedious').Request;  
     var TYPES = require('tedious').TYPES;  
@@ -52,4 +54,3 @@ var Connection = require('tedious').Connection;
         connection.execSql(request);  
     }  
     
-    connection.connect();
