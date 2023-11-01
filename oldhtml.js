@@ -8,17 +8,8 @@ const port = 80;
 let indexFile;
 
 const server = http.createServer((req, res) => {
-    switch (request.url) {
-        case "/style/style.css" :
-            res.setHeader('Content-Type', 'text/css');
-            res.writeHead(200);
-            res.write(cssFile);
-            break;
-        default :
-            res.setHeader('Content-Type', 'text/html');
-            res.writeHead(200);
-            res.write(indexFile);
-    }
+    res.setHeader('Content-Type', 'text/html');
+    res.writeHead(200);
     res.end(indexFile);
 });
 
@@ -31,14 +22,5 @@ fs.readFile(__dirname + "/index.html")
     })
     .catch(err => {
         res.error(`Could not read index.html file: ${err}`);
-        process.exit(1);
-    })
-
-fs.readFile(__dirname + "/style/style.css")
-    .then(contents => {
-        cssFile = contents;
-    })
-    .catch(err => {
-        res.error(`Could not read style.css file: ${err}`);
         process.exit(1);
     })
