@@ -187,7 +187,7 @@ let givepace = () => {
     
             if( GetTimeS < 10) {
                 GetTimeS = ('0' + GetTimeS)
-
+            }
             if(GetTimeM < 10) {
                 GetTimeM = ('0' + GetTimeM);
             } else;
